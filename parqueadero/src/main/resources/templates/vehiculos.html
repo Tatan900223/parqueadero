@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehículos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Vehículos</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/vehiculos">Vehículos</a>
+            <a href="/celdas">Celdas</a>
+            <a href="/logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Lista de Vehículos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Tipo</th>
+                        <th>Hora de Entrada</th>
+                        <th>Hora de Salida</th>
+                        <th>Costo Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="vehiculo : ${vehiculos}">
+                        <td th:text="${vehiculo.placa}"></td>
+                        <td th:text="${vehiculo.tipo}"></td>
+                        <td th:text="${vehiculo.horaEntrada}"></td>
+                        <td th:text="${vehiculo.horaSalida}"></td>
+                        <td th:text="${vehiculo.costoTotal}"></td>
+                        <td>
+                            <a th:href="@{'/vehiculos/salida/' + ${vehiculo.id}}">Registrar Salida</a>
+                            <a th:href="@{'/vehiculos/eliminar/' + ${vehiculo.id}}">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="button" href="/vehiculos/nuevo">Registrar Nuevo Vehículo</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Parqueadero</p>
+    </footer>
+</body>
+</html>

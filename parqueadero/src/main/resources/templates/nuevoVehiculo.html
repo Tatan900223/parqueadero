@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Vehículo</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Registrar Nuevo Vehículo</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/vehiculos">Vehículos</a>
+            <a href="/celdas">Celdas</a>
+            <a href="/logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Información del Vehículo</h2>
+            <form action="/vehiculos" method="post">
+                <label for="placa">Placa:</label>
+                <input type="text" id="placa" name="placa" required>
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="Carro">Carro</option>
+                    <option value="Moto">Moto</option>
+                </select>
+                <label for="celda">Celda:</label>
+                <input type="text" id="celda" name="celda" required>
+                <button type="submit" class="button">Registrar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Parqueadero</p>
+    </footer>
+</body>
+</html>
