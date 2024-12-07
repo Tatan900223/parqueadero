@@ -28,6 +28,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
+                        .defaultSuccessUrl("/vehiculos", true) // URL a la que se redirige tras login exitoso .permitAll()
                         .permitAll()
                 )
                 .logout(logout -> logout.permitAll());

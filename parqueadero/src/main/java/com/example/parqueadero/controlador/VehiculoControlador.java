@@ -43,4 +43,6 @@ public class VehiculoControlador {
         vehiculoServicio.eliminarVehiculo(id);
         return "redirect:/vehiculos";
     }
+
+
 }

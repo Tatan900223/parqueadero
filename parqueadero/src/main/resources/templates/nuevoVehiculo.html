@@ -5,36 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Vehículo</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            font-size: 1.1rem;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: white;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="text-center">
         <h1>Registrar Nuevo Vehículo</h1>
-        <nav>
-            <a href="/">Inicio</a>
-            <a href="/vehiculos">Vehículos</a>
-            <a href="/celdas">Celdas</a>
-            <a href="/logout">Cerrar Sesión</a>
+        <nav class="text-center">
+            <a href="/" class="btn btn-link">Inicio</a>
+            <a href="/vehiculos" class="btn btn-link">Vehículos</a>
+            <a href="/celdas" class="btn btn-link">Celdas</a>
+            <a href="/logout" class="btn btn-link">Cerrar Sesión</a>
         </nav>
     </header>
-    <main>
+
+    <main class="container">
         <section>
-            <h2>Información del Vehículo</h2>
+            <h2 class="mb-4">Información del Vehículo</h2>
             <form action="/vehiculos" method="post">
-                <label for="placa">Placa:</label>
-                <input type="text" id="placa" name="placa" required>
-                <label for="tipo">Tipo:</label>
-                <select id="tipo" name="tipo" required>
-                    <option value="Carro">Carro</option>
-                    <option value="Moto">Moto</option>
-                </select>
-                <label for="celda">Celda:</label>
-                <input type="text" id="celda" name="celda" required>
-                <button type="submit" class="button">Registrar</button>
+                <div class="form-group">
+                    <label for="placa">Placa:</label>
+                    <input type="text" id="placa" name="placa" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" name="tipo" class="form-control" required>
+                        <option value="Carro">Carro</option>
+                        <option value="Moto">Moto</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="celda">Celda:</label>
+                    <input type="text" id="celda" name="celda" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-custom btn-lg btn-block">Registrar</button>
             </form>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Parqueadero</p>
     </footer>
+
+    <!-- Enlace a jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
